@@ -1,5 +1,6 @@
 from framework.apis.api_base import ApiBase
 from framework.pokemon.pokemon import Pokemon
+import pdb
 
 
 class ApiPokemon(ApiBase):
@@ -12,4 +13,7 @@ class ApiPokemon(ApiBase):
             name="get_pokemon",
             url=self.pokemon_base + "v2/pokemon/" + pokemon
         )
+        if not self.verification_status:
+            return None
+
         return Pokemon(pokemon_raw)

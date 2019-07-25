@@ -15,10 +15,13 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
       - run:
-          name: "Exporting variables"
-          command: sed
-      - run:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest -v --cov=calculator
+            pytest tests/
+            mv pytest-results* ~/repo/logs/
+      - store_artifacts:
+          path: ~/repo/logs
+          destination: Junit
+      - store_test_results:
+          path: ~/repo/logs

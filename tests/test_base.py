@@ -1,6 +1,7 @@
 import unittest
 import os
 from typing import List
+from framework.apis.api_base import ApiBase
 from framework.log.logger import Logger
 from framework.environment.environment import Environment
 
@@ -10,7 +11,7 @@ class ApiTestBase(unittest.TestCase):
         self.test_name = self.id().split(".")[-1]
         os.environ["PYTEST_CURRENT_TEST"] = self.test_name  # not needed on pytest 3.2
 
-        self.logger = Logger(self.test_name)
+        self.logger = Logger()
         self.environment = Environment()
 
         # Populate variables with data to HTML Report and to JUnit XML
@@ -23,7 +24,7 @@ class ApiTestBase(unittest.TestCase):
         self.log("\n" + self.__dict__["_testMethodDoc"])
 
     def tearDown(self):
-        self.log_step("Ending test {} - {}".format(self.id(), "PASSED" if len(self._fail_message) == 0 else "FAILED"))
+        self.log("Ending test {} - {}".format(self.id(), "PASSED" if len(self._fail_message) == 0 else "FAILED"))
         self.log("=" * 50)
         self.log("Log file created on {}.txt".format(self.logger.logging_filename))
         self.log("=" * 50)
@@ -69,3 +70,7 @@ class ApiTestBase(unittest.TestCase):
 
         self.log_step('Then everything is successfully returned on all requests')
         self.fail_if_message()
+
+    def flush_api_messages(self, api: ApiBase):
+        self.add_fail_messages(api.error_messages)
+        self.add_output_messages(api.output_messages)

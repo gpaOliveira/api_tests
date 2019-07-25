@@ -1,4 +1,5 @@
 {
   "GITLAB_KEY": "",
+  "GITLAB_BASE": "https://gitlab.com/api/v4/",
   "POKEMON_BASE": "https://pokeapi.co/api/"
 }

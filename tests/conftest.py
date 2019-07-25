@@ -8,8 +8,6 @@ from lxml import html as lxmlhtml
 from pytest_html import extras
 import pdb
 
-PYTEST_ENVIRONMENT_JSON = "pytest-results.environment.json"
-
 
 def pytest_configure(config):
     config._metadata.pop('Packages')
@@ -80,15 +78,6 @@ def pytest_html_results_table_html(report, data):
         data.append(log)
     elif report.passed:
         del data[1]
-
-
-def get_verification_block_from_log_lines(log_path):
-    with open(log_path) as log:
-        lines = log.readlines()
-        verification_start = [l for l in lines if "verification points:" in l][0]
-        verification_end = [l for l in lines if "Fail Message(s)" in l][0]
-        verification_lines_to_add = lines[lines.index(verification_start):lines.index(verification_end)]
-    return verification_lines_to_add
 
 
 @pytest.mark.hookwrapper

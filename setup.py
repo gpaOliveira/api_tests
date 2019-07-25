@@ -27,7 +27,7 @@ setup(
     packages = find_packages(),
     platforms = ["any"],
     setup_requires = ["pytest-runner"],
-    tests_require = ["pytest"]
+    tests_require = ["pytest"],
     url = "https://github.com/" + __author_username__ + "/" + project_name,
     version = __version__,
     classifiers = [

@@ -14,7 +14,6 @@ class ApiBase:
         self.output_messages = []
 
         # requests data
-        self.verificationOk = False
         self.expected_status_code = 200
         self.response_code = -1
         self.headers = {}
@@ -57,7 +56,7 @@ class ApiBase:
             override_base_folder=override_base_folder
         )
         request.request()
-        self.verificationOk = request.verification()
+        self.verification_status = request.verification()
         printable_attr = "[" + name + " Request] "
         self.error_messages += [
             printable_attr + error
@@ -70,4 +69,5 @@ class ApiBase:
         last_dict_data = request.dict_data
         self.data = last_dict_data if last_dict_data else last_raw_data
         request.save()
+        request.log_summary()
         return self.data

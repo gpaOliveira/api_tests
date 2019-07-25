@@ -1,6 +1,7 @@
 import os
 from framework.log.logger import Logger
 import json
+import pdb
 
 
 class Environment:
@@ -32,7 +33,7 @@ class Environment:
         return self.__dict__[name]
 
     def check_variables(self):
-        if self.gitlab_key is None or len(self.gitlab_key) <= 0:
+        if self.GITLAB_KEY is None or len(self.GITLAB_KEY) <= 0:
             self._logger.log("No GITLAB_KEY found - export one")
             return False
         return True
@@ -42,9 +43,13 @@ class Environment:
         data = {}
         try:
             with open(self._default_values_file) as f:
-                data = json.load(f.read())
+                data = json.loads(f.read())
         except:
             pass
+
+        if not data:
+            self._logger.log("Failed to load {}".format(self._default_values_file))
+            return
 
         for d in data:
             if d in os.environ:

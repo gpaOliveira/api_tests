@@ -206,7 +206,6 @@ class Requests:
             )
             self.elapsed_time = self.__stop_timer()
             self._requested = True
-            self.__log_summary()
             self.__save_json_data_if_cache_mode_enabled()
             return True
         except Exception as err:
@@ -242,19 +241,33 @@ class Requests:
                     func_read_textual_data=lambda: r.read().decode('utf-8'),
                     func_read_binary_data=lambda: r.read(),
                 )
-                self.__log_summary()
                 self.__save_json_data_if_cache_mode_enabled()
                 return True
             except urllib.request.HTTPError as err:
                 self.status_code = int(err.code)
                 self._data = err.read().decode('utf-8')
-                self.__log_summary()
                 return True
             except Exception as err:
                 self.error_messages.append(str(err))
-                self.__log_summary()
                 sleep(self._sleep_between_retries)
         return False
+
+    def log_summary(self):
+        self._logger.log_debug("{} {} {} {}".format(self.method, self.url, self.status_code, self.elapsed_time))
+        if self.body:
+            self._logger.log_debug("Input=====> " + str(self.body))
+        self._logger.log_debug(
+            "Headers =====> " + str(
+                {
+                    k: v if "KEY" not in k.upper() and "TOKEN" not in k.upper() else "**HIDDEN**"
+                    for k, v in self.request_headers.items()
+                }
+            )
+        )
+        if self._data or self.filename:
+            self._logger.log_debug("Output =====> " + (str(self._data) if self._data else " Saved on " + self.filename))
+        self._logger.log_debug("Output Headers =====> " + str(self.response_headers))
+        self._logger.log_debug("")
 
     def requests_async(self, workers):
         """
@@ -321,7 +334,7 @@ class Requests:
                     self.url, self.status_code
                 )
             )
-        self._logger.log_debug(
+        self._logger.log(
             "[{}] Status Code Check".format(
                 "OK" if not self.error_messages else "BAD"
             )
@@ -359,7 +372,7 @@ class Requests:
                             actual
                         )
                     )
-        self._logger.log_debug(
+        self._logger.log(
             "[{}] Headers Check".format(
                 "OK" if not self.error_messages else "BAD"
             )
@@ -377,7 +390,7 @@ class Requests:
                     header_content_len
                 )
             )
-        self._logger.log_debug(
+        self._logger.log(
             "[{}] Body Len Check".format(
                 "OK" if not self.error_messages else "BAD"
             )
@@ -420,7 +433,7 @@ class Requests:
                     for k, v in self.__dict__.items():
                         if k in response:
                             self.__dict__[k] = response[k]
-                    self._logger.log_debug("Loaded public data from {}".format(self.cached_filename))
+                    self._logger.log("Loaded public data from {}".format(self.cached_filename))
                     self._requested = True
                     return True
             except Exception as e:
@@ -443,7 +456,7 @@ class Requests:
                         f.write(self._data)
             with open(self.cached_filename, "w") as f:
                 f.write(json.dumps(self.to_json(), indent=4, ensure_ascii=True, sort_keys=True))
-            self._logger.log_debug("Saved public data on {}".format(self.cached_filename))
+            self._logger.log("Saved public data on {}".format(self.cached_filename))
             return True
         return False
 
@@ -535,13 +548,3 @@ class Requests:
         except Exception as e:
             pass
         return data
-
-    def __log_summary(self):
-        self._logger.log_debug("{} {} {} {}".format(self.method, self.url, self.status_code, self.elapsed_time))
-        if self.body:
-            self._logger.log_debug("Input=====> " + str(self.body))
-        self._logger.log_debug("Headers =====> " + str(self.request_headers))
-        if self._data or self.filename:
-            self._logger.log_debug("Output =====> " + (str(self._data) if self._data else " Saved on " + self.filename))
-        self._logger.log_debug("Output Headers =====> " + str(self.response_headers))
-        self._logger.log_debug("")

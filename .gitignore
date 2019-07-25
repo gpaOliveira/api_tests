@@ -1,3 +1,3 @@
 .idea/
 /logs/
-*.cached.json
+/.pytest_cache/
