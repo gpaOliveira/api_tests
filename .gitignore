@@ -1,3 +1,5 @@
 .idea/
 /logs/
 /.pytest_cache/
+pytest-results.*
+http*.json

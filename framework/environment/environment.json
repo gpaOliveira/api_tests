@@ -1,4 +1,7 @@
 {
+  "DEBUG": "false",
+  "GITHUB_KEY": "",
+  "GITHUB_BASE": "https://api.github.com/",
   "GITLAB_KEY": "",
   "GITLAB_BASE": "https://gitlab.com/api/v4/",
   "POKEMON_BASE": "https://pokeapi.co/api/"

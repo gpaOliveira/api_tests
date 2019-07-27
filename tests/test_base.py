@@ -11,8 +11,8 @@ class ApiTestBase(unittest.TestCase):
         self.test_name = self.id().split(".")[-1]
         os.environ["PYTEST_CURRENT_TEST"] = self.test_name  # not needed on pytest 3.2
 
-        self.logger = Logger()
         self.environment = Environment()
+        self.logger = Logger(debug=(self.environment.DEBUG == "true"))
 
         # Populate variables with data to HTML Report and to JUnit XML
         self._pytest_output = ""

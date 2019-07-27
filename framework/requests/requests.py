@@ -101,7 +101,7 @@ class Requests:
         self._requested = False
         self._retries = 3
         self._sleep_between_retries = 0.1
-        self._logger = Logger(self.__class__.__name__)
+        self._logger = Logger(name=self.__class__.__name__)
         logging.getLogger("requests").setLevel(logging.ERROR)
         logging.getLogger("urllib").setLevel(logging.ERROR)
         logging.getLogger("urllib3").setLevel(logging.ERROR)
@@ -256,14 +256,15 @@ class Requests:
         self._logger.log_debug("{} {} {} {}".format(self.method, self.url, self.status_code, self.elapsed_time))
         if self.body:
             self._logger.log_debug("Input=====> " + str(self.body))
-        self._logger.log_debug(
-            "Headers =====> " + str(
-                {
-                    k: v if "KEY" not in k.upper() and "TOKEN" not in k.upper() else "**HIDDEN**"
-                    for k, v in self.request_headers.items()
-                }
+
+        to_log_request_headers = {
+            k: (
+                v if "KEY" not in k.upper() and "TOKEN" not in k.upper() and "AUTHORIZATION" not in k.upper()
+                else "**HIDDEN**"
             )
-        )
+            for k, v in self.request_headers.items()
+        }
+        self._logger.log_debug("Headers =====> " + str(to_log_request_headers))
         if self._data or self.filename:
             self._logger.log_debug("Output =====> " + (str(self._data) if self._data else " Saved on " + self.filename))
         self._logger.log_debug("Output Headers =====> " + str(self.response_headers))

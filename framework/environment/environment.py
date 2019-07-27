@@ -11,7 +11,7 @@ class Environment:
 
     def __init__(self):
         self._data = {}
-        self._logger = Logger(self.__class__.__name__)
+        self._logger = Logger(name=self.__class__.__name__, debug=True)
         self._default_values_file = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "environment.json"
@@ -35,6 +35,9 @@ class Environment:
     def check_variables(self):
         if self.GITLAB_KEY is None or len(self.GITLAB_KEY) <= 0:
             self._logger.log("No GITLAB_KEY found - export one")
+            return False
+        if self.GITHUB_KEY is None or len(self.GITHUB_KEY) <= 0:
+            self._logger.log("No GITHUB_KEY found - export one")
             return False
         return True
 

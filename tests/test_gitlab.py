@@ -7,7 +7,7 @@ from framework.datetime.datetime import now_to_str
 
 class TestGitlabApi(ApiTestBase):
 
-    def test_make_sure_project_search_requires_api_key(self):
+    def test_make_sure_gitlab_project_search_requires_api_key(self):
         """
         Given no GITLAB_KEY
         When a search for gpaoliveira_playground is made
@@ -18,7 +18,7 @@ class TestGitlabApi(ApiTestBase):
         self.flush_api_messages(api)
         self.then_everything_should_be_fine()
 
-    def test_make_sure_project_exist(self):
+    def test_make_sure_gitlab_project_exist(self):
         """
         Given a GITLAB_KEY
         When a search for gpaoliveira_playground is made
@@ -39,7 +39,7 @@ class TestGitlabApi(ApiTestBase):
 
         self.then_everything_should_be_fine()
 
-    def test_create_issue_in_project(self):
+    def test_create_issue_in_gitlab_project(self):
         """
         Given a GITLAB_KEY
         And a search for gpaoliveira_playground was made

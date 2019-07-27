@@ -22,7 +22,7 @@ class ApiBase:
         self.verification_status = False
 
         # Other useful declarations for the children to use
-        self.logger = Logger(self.__class__.__name__)
+        self.logger = Logger(name=self.__class__.__name__)
 
     def log(self, line):
         self.logger.log(line)

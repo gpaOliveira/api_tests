@@ -6,11 +6,11 @@ from framework.datetime.datetime import now_to_str
 
 
 class Logger:
-    def __init__(self, name=None):
+    def __init__(self, name=None, debug=False):
         self.name = name
         self.test_name = os.environ.get("PYTEST_CURRENT_TEST", name)
         self._format = "%(asctime)-15s %(name)s %(message)s"
-        self._logging_level = logging.DEBUG
+        self._logging_level = logging.DEBUG if debug else logging.INFO
         self.logging_filename = self.__initialize_filename()
         self._logger = self.__initialize_log()
 
