@@ -34,4 +34,38 @@ Environment variables are controlled by the Environment package and class (frame
 
 Logging is controlled by the Logger class (framework/log/logger.py), another custom made class that allow all classes access to a test log file, that is showed in the ```stdout``` and in a proper file under logs folder, generated at runtime. Default logging level is set to INFO, but one can ```export DEBUG="true"``` to change it to DEBUG (thus, a lot more API I/O data will be shown, thanks to the calls of method such as ```Requests.log_summary()```).
 
-Finally, a test should always start with the prefix "test_" (so pytest can find it) and have a Docstring with its description. Later, this description will be shown together with the test name and status in the HTML report ```pytest-results.html```. After each test(s) execution, the JUnit friendly ```pytest-results.xml``` is also generated.
+### Test details:
+
+All tests should be in classes inheriting from ApiTestBase (tests/test_base.py).
+
+A test should always start with the prefix "test_" (so pytest can find it) and have a Docstring with its description. Later, this description will be shown together with the test name and status in the HTML report ```pytest-results.html```. After each test(s) execution, the JUnit friendly ```pytest-results.xml``` is also generated.
+
+In order to allow multiple checks in a same test, all tests should end with a call to ```ApiTestBase.then_everything_should_be_fine``` - this method checks if error messages where added or not and call an assert to finish the test. 
+
+Therefore, a test should add error messages with ```ApiTestBase.add_fail_message``` or ```ApiTestBase.add_fail_messages```. When an API request happens, some automatic checks are done (to guarantee the response status code was as expected, for example). Therefore, the test is free to manipulate these messages in ```ApiBase.error_messages``` and flush it to his own area of error messages with ```ApiTestBase.flush_api_messages```.
+
+As an HTML report is generated in the end, a test can decide to add more status messages to it by using ```ApiTestBase.add_output_message``` or ```ApiTestBase.add_output_messages```.
+
+When a test calls an API and grab an object, it's often useful to check if it contains the proper name or description. It can be achieved via the class ```EqualsDeep``` as follows:
+
+```python
+api = ApiGitlab(self.environment.GITLAB_BASE, self.environment.GITLAB_KEY)
+project: GitlabProject = api.search_project("gpaoliveira_playground")
+equals = EqualDeep()
+if not equals.run(target=project, name="gpaoliveira_playground"):
+    self.add_fail_messages(equals.error_messages)
+```
+
+Additionally, ```EqualsDeep.two_objects``` can be called to compare the public attributes (the ones that do not starts with an underscore) of these objects. It can be used as follows:
+
+```python
+equals = EqualDeep()
+if not equals.two_objects(issue, retrieved_issue):
+    self.then_everything_should_be_fine(
+        ["issue created != retrieved - {}".format(",".join(equals.error_messages))]
+)
+else:
+    self.add_output_message("issue created == retrieved")
+```
+
+Furthermore, comparing two objects may be useful when loading alist of serialized objects to a JSON file. Test should save such files using ```ApiTestBase.data_test_file_path```. To save a list of objects, use ```JsonFile.list_to_json_file```. To load them again, use ```JsonFile.parse_from_json_file```.

@@ -1,0 +1,128 @@
+[
+    {
+        "repo_id": 978506,
+        "node_id": "MDEwOlJlcG9zaXRvcnk5Nzg1MDY=",
+        "name": "dojotools",
+        "full_name": "cesarFrias/dojotools",
+        "description": "Tools for your coding dojo session",
+        "owner_login": "cesarFrias",
+        "license_name": "GNU General Public License v2.0"
+    },
+    {
+        "repo_id": 45439473,
+        "node_id": "MDEwOlJlcG9zaXRvcnk0NTQzOTQ3Mw==",
+        "name": "hp_product_extract",
+        "full_name": "cloudspokes/hp_product_extract",
+        "description": null,
+        "owner_login": "cloudspokes",
+        "license_name": null
+    },
+    {
+        "repo_id": 198386818,
+        "node_id": "MDEwOlJlcG9zaXRvcnkxOTgzODY4MTg=",
+        "name": "api_tests",
+        "full_name": "gpaOliveira/api_tests",
+        "description": "Minimalistic Python 3.6.1 framework to create/run API tests with Pytest, generating a nice HTML and JUnit XML in the end.",
+        "owner_login": "gpaOliveira",
+        "license_name": "MIT License"
+    },
+    {
+        "repo_id": 89332073,
+        "node_id": "MDEwOlJlcG9zaXRvcnk4OTMzMjA3Mw==",
+        "name": "behave",
+        "full_name": "gpaOliveira/behave",
+        "description": "BDD, Python style.",
+        "owner_login": "gpaOliveira",
+        "license_name": "Other"
+    },
+    {
+        "repo_id": 56805984,
+        "node_id": "MDEwOlJlcG9zaXRvcnk1NjgwNTk4NA==",
+        "name": "cryptography",
+        "full_name": "gpaOliveira/cryptography",
+        "description": "Coursework assignments for Cryptography course on PUC-RS Master class",
+        "owner_login": "gpaOliveira",
+        "license_name": "MIT License"
+    },
+    {
+        "repo_id": 1779365,
+        "node_id": "MDEwOlJlcG9zaXRvcnkxNzc5MzY1",
+        "name": "cspec",
+        "full_name": "gpaOliveira/cspec",
+        "description": "Behavior driven development in C",
+        "owner_login": "gpaOliveira",
+        "license_name": "Other"
+    },
+    {
+        "repo_id": 77132314,
+        "node_id": "MDEwOlJlcG9zaXRvcnk3NzEzMjMxNA==",
+        "name": "dissertation",
+        "full_name": "gpaOliveira/dissertation",
+        "description": "Master's Dissertation",
+        "owner_login": "gpaOliveira",
+        "license_name": null
+    },
+    {
+        "repo_id": 897076,
+        "node_id": "MDEwOlJlcG9zaXRvcnk4OTcwNzY=",
+        "name": "dojo-ufrgs",
+        "full_name": "gpaOliveira/dojo-ufrgs",
+        "description": "Reposit\u00f3rio dos dojos realizadaos na UFRGS.",
+        "owner_login": "gpaOliveira",
+        "license_name": null
+    },
+    {
+        "repo_id": 59253151,
+        "node_id": "MDEwOlJlcG9zaXRvcnk1OTI1MzE1MQ==",
+        "name": "DTA_AAC",
+        "full_name": "gpaOliveira/DTA_AAC",
+        "description": "Augmentative and assistive communication (AAC) board of images as part of DTA class on PUC-RS",
+        "owner_login": "gpaOliveira",
+        "license_name": "Apache License 2.0"
+    },
+    {
+        "repo_id": 122851869,
+        "node_id": "MDEwOlJlcG9zaXRvcnkxMjI4NTE4Njk=",
+        "name": "NewPythonApp",
+        "full_name": "gpaOliveira/NewPythonApp",
+        "description": "A simple new application template for python, based in Flask and SQLAlchemy",
+        "owner_login": "gpaOliveira",
+        "license_name": "MIT License"
+    },
+    {
+        "repo_id": 199136934,
+        "node_id": "MDEwOlJlcG9zaXRvcnkxOTkxMzY5MzQ=",
+        "name": "playground",
+        "full_name": "gpaOliveira/playground",
+        "description": "playground to create issues via api_tests repo",
+        "owner_login": "gpaOliveira",
+        "license_name": "MIT License"
+    },
+    {
+        "repo_id": 70716470,
+        "node_id": "MDEwOlJlcG9zaXRvcnk3MDcxNjQ3MA==",
+        "name": "SuperDiffer",
+        "full_name": "gpaOliveira/SuperDiffer",
+        "description": "Web App to calculate the difference between two input strings",
+        "owner_login": "gpaOliveira",
+        "license_name": "MIT License"
+    },
+    {
+        "repo_id": 30268465,
+        "node_id": "MDEwOlJlcG9zaXRvcnkzMDI2ODQ2NQ==",
+        "name": "TormentaRPGCharacterManager",
+        "full_name": "gpaOliveira/TormentaRPGCharacterManager",
+        "description": null,
+        "owner_login": "gpaOliveira",
+        "license_name": null
+    },
+    {
+        "repo_id": 41101532,
+        "node_id": "MDEwOlJlcG9zaXRvcnk0MTEwMTUzMg==",
+        "name": "Acidentes-POA",
+        "full_name": "staudt/Acidentes-POA",
+        "description": "Visualiza\u00e7\u00e3o de m\u00e9tricas de acidentes de tr\u00e2nsito em Porto Alegre",
+        "owner_login": "staudt",
+        "license_name": "MIT License"
+    }
+]

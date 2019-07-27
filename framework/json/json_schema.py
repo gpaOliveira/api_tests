@@ -1,20 +1,18 @@
 import fastjsonschema
 import json
 
-class ApiSchemaCheckerException(Exception):
+
+class JsonSchemaCheckerException(Exception):
     pass
 
 
-class ApiSchemaChecker:
+class JsonSchemaChecker:
     LOADED_VALIDATE = {}
-
-    def __init__(self):
-        pass
 
     @staticmethod
     def validate(data, schema):
-        if schema in ApiSchemaChecker.LOADED_VALIDATE:
-            validate = ApiSchemaChecker.LOADED_VALIDATE[schema]
+        if schema in JsonSchemaChecker.LOADED_VALIDATE:
+            validate = JsonSchemaChecker.LOADED_VALIDATE[schema]
         else:
             with open(schema) as f:
                 schema_json = json.loads(f.read())
@@ -23,4 +21,4 @@ class ApiSchemaChecker:
         try:
             return validate(data)
         except fastjsonschema.exceptions.JsonSchemaException as e:
-            raise ApiSchemaCheckerException(str(e))
+            raise JsonSchemaCheckerException(str(e))

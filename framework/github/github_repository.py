@@ -27,3 +27,27 @@ class GithubRepository:
             "owner_login": self.owner_login,
             "license_name": self.license_name
         }
+
+    @staticmethod
+    def from_json(github_repository_json):
+        return GithubRepository({
+            "id": github_repository_json.get("repo_id"),
+            "node_id": github_repository_json.get("node_id"),
+            "name": github_repository_json.get("name"),
+            "full_name": github_repository_json.get("full_name"),
+            "description": github_repository_json.get("description"),
+            "owner": {"login": github_repository_json.get("owner_login")},
+            "license": (
+                None if github_repository_json.get("license_name") is None
+                else {"name": github_repository_json.get("license_name")}
+            )
+        })
+
+    def csv_headers(self):
+        return list(self.to_json().keys())
+
+    def csv_line(self, headers):
+        myself = self.to_json()
+        return [
+            myself.get(h, '') for h in headers
+        ]

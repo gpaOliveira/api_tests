@@ -1,5 +1,6 @@
 import unittest
 import os
+import json
 from typing import List
 from framework.apis.api_base import ApiBase
 from framework.log.logger import Logger
@@ -74,3 +75,10 @@ class ApiTestBase(unittest.TestCase):
     def flush_api_messages(self, api: ApiBase):
         self.add_fail_messages(api.error_messages)
         self.add_output_messages(api.output_messages)
+
+    def data_test_file_path(self, filename):
+        return os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "data",
+            filename
+        )

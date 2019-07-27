@@ -1,5 +1,6 @@
 from framework.apis.api_base import ApiBase
 from framework.github.github_repository import GithubRepository
+from framework.github.github_issue import GithubIssue
 from framework.requests.requests import Requests
 from typing import List
 import pdb
@@ -41,3 +42,57 @@ class ApiGithub(ApiBase):
             return []
 
         return [GithubRepository(r) for r in repos_raw]
+
+    def list_issues_in_repo(self, repo: GithubRepository):
+        url = "{}repos/{}/{}/issues".format(self.github_base, repo.owner_login, repo.name)
+        issues_raw = self.request(
+            name="user_issues_in_repo",
+            url=url,
+            request_headers={
+                "Authorization": "token " + self.github_api_key
+            }
+        )
+        if not self.verification_status:
+            return []
+        if not issues_raw:
+            return []
+
+        return [GithubIssue(r) for r in issues_raw]
+
+    def create_issue_in_repo(self, repo: GithubRepository, name:str, labels:List[str], description:str):
+        url = "{}repos/{}/{}/issues".format(self.github_base, repo.owner_login, repo.name)
+        issue_raw = self.request(
+            method=Requests.METHOD_POST,
+            name="create_issue_in_repo",
+            url=url,
+            request_headers={
+                "Authorization": "token " + self.github_api_key
+            },
+            json_body={
+                "title": name,
+                "body": description,
+                "labels": labels
+            },
+            expected_response_code=201
+        )
+        if not self.verification_status:
+            return None
+        if not issue_raw:
+            return None
+
+        return GithubIssue(issue_raw)
+
+    def retrieve_single_issue(self, issue: GithubIssue):
+        issue_raw = self.request(
+            name="create_issue_in_repo",
+            url=issue.url,
+            request_headers={
+                "Authorization": "token " + self.github_api_key
+            }
+        )
+        if not self.verification_status:
+            return None
+        if not issue_raw:
+            return None
+
+        return GithubIssue(issue_raw)

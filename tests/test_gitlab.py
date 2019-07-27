@@ -24,6 +24,7 @@ class TestGitlabApi(ApiTestBase):
         When a search for gpaoliveira_playground is made
         Then the project is returned
         """
+        self.log_step("Given a GITLAB_KEY")
         if not self.environment.GITLAB_KEY:
             self.then_everything_should_be_fine(["No GITLAB_KEY"])
 
@@ -47,7 +48,7 @@ class TestGitlabApi(ApiTestBase):
         And project issues are searched for using created issue name
         Then the same issue is returned
         """
-
+        self.log_step("Given a GITLAB_KEY")
         if not self.environment.GITLAB_KEY:
             self.then_everything_should_be_fine(["No GITLAB_KEY"])
 
@@ -62,7 +63,7 @@ class TestGitlabApi(ApiTestBase):
         self.log_step("When an issue is created with today's date")
         now = now_to_str()
         issue_name = "Issue {}".format(now)
-        self.add_output_message("Creating {}".format(issue_name))
+        self.add_output_message("Creating '{}'".format(issue_name))
         issue = api.create_bug(project, issue_name)
         self.add_output_message(str(issue))
         if not equals.run(target=issue, name=issue_name):
@@ -76,9 +77,10 @@ class TestGitlabApi(ApiTestBase):
             self.then_everything_should_be_fine(equals.error_messages)
 
         self.log_step("Then the same issue is returned")
-        if issue.to_json() != listed_issue.to_json():
+        equals = EqualDeep()
+        if not equals.two_objects(issue, listed_issue):
             self.then_everything_should_be_fine(
-                ["issue {} != retrieved {}".format(issue.to_json(), listed_issue.to_json())]
+                ["issue != retrieved - {}".format(",".join(equals.error_messages))]
             )
 
         self.then_everything_should_be_fine()
