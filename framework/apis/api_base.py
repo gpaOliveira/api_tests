@@ -2,6 +2,7 @@ import pdb
 from typing import List
 from framework.log.logger import Logger
 from framework.requests.requests import Requests
+from framework.apis.api_schema import ApiSchemaChecker, ApiSchemaCheckerException
 
 
 class ApiBase:
@@ -71,3 +72,11 @@ class ApiBase:
         request.save()
         request.log_summary()
         return self.data
+
+    def validate_json_schema(self, name, data, schema_file):
+        try:
+            check = ApiSchemaChecker.validate(data, schema_file)
+            return check != {}
+        except ApiSchemaCheckerException as e:
+            self.error_messages.append("{}: {}".format(name, e))
+            return False

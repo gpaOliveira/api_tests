@@ -19,7 +19,9 @@ jobs:
           command: |
             . venv/bin/activate
             pytest tests/
-            mv pytest-results* ~/repo/logs/
+      - run:
+          name: store test results
+          command: mv pytest-results* ~/repo/logs/
       - store_artifacts:
           path: ~/repo/logs
           destination: Junit

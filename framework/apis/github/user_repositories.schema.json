@@ -1,0 +1,1089 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "array",
+  "title": "The Root Schema",
+  "items": {
+    "$id": "#/items",
+    "type": "object",
+    "title": "The Items Schema",
+    "required": [
+      "id",
+      "node_id",
+      "name",
+      "full_name",
+      "private",
+      "owner",
+      "html_url",
+      "description",
+      "fork",
+      "url",
+      "forks_url",
+      "keys_url",
+      "collaborators_url",
+      "teams_url",
+      "hooks_url",
+      "issue_events_url",
+      "events_url",
+      "assignees_url",
+      "branches_url",
+      "tags_url",
+      "blobs_url",
+      "git_tags_url",
+      "git_refs_url",
+      "trees_url",
+      "statuses_url",
+      "languages_url",
+      "stargazers_url",
+      "contributors_url",
+      "subscribers_url",
+      "subscription_url",
+      "commits_url",
+      "git_commits_url",
+      "comments_url",
+      "issue_comment_url",
+      "contents_url",
+      "compare_url",
+      "merges_url",
+      "archive_url",
+      "downloads_url",
+      "issues_url",
+      "pulls_url",
+      "milestones_url",
+      "notifications_url",
+      "labels_url",
+      "releases_url",
+      "deployments_url",
+      "created_at",
+      "updated_at",
+      "pushed_at",
+      "git_url",
+      "ssh_url",
+      "clone_url",
+      "svn_url",
+      "homepage",
+      "size",
+      "stargazers_count",
+      "watchers_count",
+      "language",
+      "has_issues",
+      "has_projects",
+      "has_downloads",
+      "has_wiki",
+      "has_pages",
+      "forks_count",
+      "mirror_url",
+      "archived",
+      "disabled",
+      "open_issues_count",
+      "license",
+      "forks",
+      "open_issues",
+      "watchers",
+      "default_branch",
+      "permissions"
+    ],
+    "properties": {
+      "id": {
+        "$id": "#/items/properties/id",
+        "type": "integer",
+        "title": "The Id Schema",
+        "default": 0,
+        "examples": [
+          978506
+        ]
+      },
+      "node_id": {
+        "$id": "#/items/properties/node_id",
+        "type": "string",
+        "title": "The Node_id Schema",
+        "default": "",
+        "examples": [
+          "MDEwOlJlcG9zaXRvcnk5Nzg1MDY="
+        ],
+        "pattern": "^(.*)$"
+      },
+      "name": {
+        "$id": "#/items/properties/name",
+        "type": "string",
+        "title": "The Name Schema",
+        "default": "",
+        "examples": [
+          "dojotools"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "full_name": {
+        "$id": "#/items/properties/full_name",
+        "type": "string",
+        "title": "The Full_name Schema",
+        "default": "",
+        "examples": [
+          "cesarFrias/dojotools"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "private": {
+        "$id": "#/items/properties/private",
+        "type": "boolean",
+        "title": "The Private Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "owner": {
+        "$id": "#/items/properties/owner",
+        "type": "object",
+        "title": "The Owner Schema",
+        "required": [
+          "login",
+          "id",
+          "node_id",
+          "avatar_url",
+          "gravatar_id",
+          "url",
+          "html_url",
+          "followers_url",
+          "following_url",
+          "gists_url",
+          "starred_url",
+          "subscriptions_url",
+          "organizations_url",
+          "repos_url",
+          "events_url",
+          "received_events_url",
+          "type",
+          "site_admin"
+        ],
+        "properties": {
+          "login": {
+            "$id": "#/items/properties/owner/properties/login",
+            "type": "string",
+            "title": "The Login Schema",
+            "default": "",
+            "examples": [
+              "cesarFrias"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "id": {
+            "$id": "#/items/properties/owner/properties/id",
+            "type": "integer",
+            "title": "The Id Schema",
+            "default": 0,
+            "examples": [
+              362952
+            ]
+          },
+          "node_id": {
+            "$id": "#/items/properties/owner/properties/node_id",
+            "type": "string",
+            "title": "The Node_id Schema",
+            "default": "",
+            "examples": [
+              "MDQ6VXNlcjM2Mjk1Mg=="
+            ],
+            "pattern": "^(.*)$"
+          },
+          "avatar_url": {
+            "$id": "#/items/properties/owner/properties/avatar_url",
+            "type": "string",
+            "title": "The Avatar_url Schema",
+            "default": "",
+            "examples": [
+              "https://avatars3.githubusercontent.com/u/362952?v=4"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "gravatar_id": {
+            "$id": "#/items/properties/owner/properties/gravatar_id",
+            "type": "string",
+            "title": "The Gravatar_id Schema",
+            "default": "",
+            "examples": [
+              ""
+            ],
+            "pattern": "^(.*)$"
+          },
+          "url": {
+            "$id": "#/items/properties/owner/properties/url",
+            "type": "string",
+            "title": "The Url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "html_url": {
+            "$id": "#/items/properties/owner/properties/html_url",
+            "type": "string",
+            "title": "The Html_url Schema",
+            "default": "",
+            "examples": [
+              "https://github.com/cesarFrias"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "followers_url": {
+            "$id": "#/items/properties/owner/properties/followers_url",
+            "type": "string",
+            "title": "The Followers_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/followers"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "following_url": {
+            "$id": "#/items/properties/owner/properties/following_url",
+            "type": "string",
+            "title": "The Following_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/following{/other_user}"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "gists_url": {
+            "$id": "#/items/properties/owner/properties/gists_url",
+            "type": "string",
+            "title": "The Gists_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/gists{/gist_id}"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "starred_url": {
+            "$id": "#/items/properties/owner/properties/starred_url",
+            "type": "string",
+            "title": "The Starred_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/starred{/owner}{/repo}"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "subscriptions_url": {
+            "$id": "#/items/properties/owner/properties/subscriptions_url",
+            "type": "string",
+            "title": "The Subscriptions_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/subscriptions"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "organizations_url": {
+            "$id": "#/items/properties/owner/properties/organizations_url",
+            "type": "string",
+            "title": "The Organizations_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/orgs"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "repos_url": {
+            "$id": "#/items/properties/owner/properties/repos_url",
+            "type": "string",
+            "title": "The Repos_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/repos"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "events_url": {
+            "$id": "#/items/properties/owner/properties/events_url",
+            "type": "string",
+            "title": "The Events_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/events{/privacy}"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "received_events_url": {
+            "$id": "#/items/properties/owner/properties/received_events_url",
+            "type": "string",
+            "title": "The Received_events_url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/users/cesarFrias/received_events"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/items/properties/owner/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": [
+              "User"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "site_admin": {
+            "$id": "#/items/properties/owner/properties/site_admin",
+            "type": "boolean",
+            "title": "The Site_admin Schema",
+            "default": false,
+            "examples": [
+              false
+            ]
+          }
+        }
+      },
+      "html_url": {
+        "$id": "#/items/properties/html_url",
+        "type": "string",
+        "title": "The Html_url Schema",
+        "default": "",
+        "examples": [
+          "https://github.com/cesarFrias/dojotools"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "description": {
+        "$id": "#/items/properties/description",
+        "member_region": { "type": [ "string", "null" ] },
+        "title": "The Description Schema",
+        "default": "",
+        "examples": [
+          "Tools for your coding dojo session"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "fork": {
+        "$id": "#/items/properties/fork",
+        "type": "boolean",
+        "title": "The Fork Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "url": {
+        "$id": "#/items/properties/url",
+        "type": "string",
+        "title": "The Url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "forks_url": {
+        "$id": "#/items/properties/forks_url",
+        "type": "string",
+        "title": "The Forks_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/forks"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "keys_url": {
+        "$id": "#/items/properties/keys_url",
+        "type": "string",
+        "title": "The Keys_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/keys{/key_id}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "collaborators_url": {
+        "$id": "#/items/properties/collaborators_url",
+        "type": "string",
+        "title": "The Collaborators_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/collaborators{/collaborator}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "teams_url": {
+        "$id": "#/items/properties/teams_url",
+        "type": "string",
+        "title": "The Teams_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/teams"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "hooks_url": {
+        "$id": "#/items/properties/hooks_url",
+        "type": "string",
+        "title": "The Hooks_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/hooks"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "issue_events_url": {
+        "$id": "#/items/properties/issue_events_url",
+        "type": "string",
+        "title": "The Issue_events_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/issues/events{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "events_url": {
+        "$id": "#/items/properties/events_url",
+        "type": "string",
+        "title": "The Events_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/events"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "assignees_url": {
+        "$id": "#/items/properties/assignees_url",
+        "type": "string",
+        "title": "The Assignees_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/assignees{/user}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "branches_url": {
+        "$id": "#/items/properties/branches_url",
+        "type": "string",
+        "title": "The Branches_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/branches{/branch}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "tags_url": {
+        "$id": "#/items/properties/tags_url",
+        "type": "string",
+        "title": "The Tags_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/tags"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "blobs_url": {
+        "$id": "#/items/properties/blobs_url",
+        "type": "string",
+        "title": "The Blobs_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/git/blobs{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "git_tags_url": {
+        "$id": "#/items/properties/git_tags_url",
+        "type": "string",
+        "title": "The Git_tags_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/git/tags{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "git_refs_url": {
+        "$id": "#/items/properties/git_refs_url",
+        "type": "string",
+        "title": "The Git_refs_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/git/refs{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "trees_url": {
+        "$id": "#/items/properties/trees_url",
+        "type": "string",
+        "title": "The Trees_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/git/trees{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "statuses_url": {
+        "$id": "#/items/properties/statuses_url",
+        "type": "string",
+        "title": "The Statuses_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/statuses/{sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "languages_url": {
+        "$id": "#/items/properties/languages_url",
+        "type": "string",
+        "title": "The Languages_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/languages"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "stargazers_url": {
+        "$id": "#/items/properties/stargazers_url",
+        "type": "string",
+        "title": "The Stargazers_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/stargazers"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "contributors_url": {
+        "$id": "#/items/properties/contributors_url",
+        "type": "string",
+        "title": "The Contributors_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/contributors"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "subscribers_url": {
+        "$id": "#/items/properties/subscribers_url",
+        "type": "string",
+        "title": "The Subscribers_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/subscribers"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "subscription_url": {
+        "$id": "#/items/properties/subscription_url",
+        "type": "string",
+        "title": "The Subscription_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/subscription"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "commits_url": {
+        "$id": "#/items/properties/commits_url",
+        "type": "string",
+        "title": "The Commits_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/commits{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "git_commits_url": {
+        "$id": "#/items/properties/git_commits_url",
+        "type": "string",
+        "title": "The Git_commits_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/git/commits{/sha}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "comments_url": {
+        "$id": "#/items/properties/comments_url",
+        "type": "string",
+        "title": "The Comments_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/comments{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "issue_comment_url": {
+        "$id": "#/items/properties/issue_comment_url",
+        "type": "string",
+        "title": "The Issue_comment_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/issues/comments{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "contents_url": {
+        "$id": "#/items/properties/contents_url",
+        "type": "string",
+        "title": "The Contents_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/contents/{+path}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "compare_url": {
+        "$id": "#/items/properties/compare_url",
+        "type": "string",
+        "title": "The Compare_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/compare/{base}...{head}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "merges_url": {
+        "$id": "#/items/properties/merges_url",
+        "type": "string",
+        "title": "The Merges_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/merges"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "archive_url": {
+        "$id": "#/items/properties/archive_url",
+        "type": "string",
+        "title": "The Archive_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/{archive_format}{/ref}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "downloads_url": {
+        "$id": "#/items/properties/downloads_url",
+        "type": "string",
+        "title": "The Downloads_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/downloads"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "issues_url": {
+        "$id": "#/items/properties/issues_url",
+        "type": "string",
+        "title": "The Issues_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/issues{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "pulls_url": {
+        "$id": "#/items/properties/pulls_url",
+        "type": "string",
+        "title": "The Pulls_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/pulls{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "milestones_url": {
+        "$id": "#/items/properties/milestones_url",
+        "type": "string",
+        "title": "The Milestones_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/milestones{/number}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "notifications_url": {
+        "$id": "#/items/properties/notifications_url",
+        "type": "string",
+        "title": "The Notifications_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/notifications{?since,all,participating}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "labels_url": {
+        "$id": "#/items/properties/labels_url",
+        "type": "string",
+        "title": "The Labels_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/labels{/name}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "releases_url": {
+        "$id": "#/items/properties/releases_url",
+        "type": "string",
+        "title": "The Releases_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/releases{/id}"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "deployments_url": {
+        "$id": "#/items/properties/deployments_url",
+        "type": "string",
+        "title": "The Deployments_url Schema",
+        "default": "",
+        "examples": [
+          "https://api.github.com/repos/cesarFrias/dojotools/deployments"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "created_at": {
+        "$id": "#/items/properties/created_at",
+        "type": "string",
+        "title": "The Created_at Schema",
+        "default": "",
+        "examples": [
+          "2010-10-11T13:13:14Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "updated_at": {
+        "$id": "#/items/properties/updated_at",
+        "type": "string",
+        "title": "The Updated_at Schema",
+        "default": "",
+        "examples": [
+          "2018-01-05T13:08:53Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "pushed_at": {
+        "$id": "#/items/properties/pushed_at",
+        "type": "string",
+        "title": "The Pushed_at Schema",
+        "default": "",
+        "examples": [
+          "2011-06-08T03:32:09Z"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "git_url": {
+        "$id": "#/items/properties/git_url",
+        "type": "string",
+        "title": "The Git_url Schema",
+        "default": "",
+        "examples": [
+          "git://github.com/cesarFrias/dojotools.git"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "ssh_url": {
+        "$id": "#/items/properties/ssh_url",
+        "type": "string",
+        "title": "The Ssh_url Schema",
+        "default": "",
+        "examples": [
+          "git@github.com:cesarFrias/dojotools.git"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "clone_url": {
+        "$id": "#/items/properties/clone_url",
+        "type": "string",
+        "title": "The Clone_url Schema",
+        "default": "",
+        "examples": [
+          "https://github.com/cesarFrias/dojotools.git"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "svn_url": {
+        "$id": "#/items/properties/svn_url",
+        "type": "string",
+        "title": "The Svn_url Schema",
+        "default": "",
+        "examples": [
+          "https://github.com/cesarFrias/dojotools"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "homepage": {
+        "$id": "#/items/properties/homepage",
+        "member_region": { "type": [ "string", "null" ] },
+        "title": "The Homepage Schema",
+        "default": "",
+        "examples": [
+          ""
+        ],
+        "pattern": "^(.*)$"
+      },
+      "size": {
+        "$id": "#/items/properties/size",
+        "type": "integer",
+        "title": "The Size Schema",
+        "default": 0,
+        "examples": [
+          208
+        ]
+      },
+      "stargazers_count": {
+        "$id": "#/items/properties/stargazers_count",
+        "type": "integer",
+        "title": "The Stargazers_count Schema",
+        "default": 0,
+        "examples": [
+          13
+        ]
+      },
+      "watchers_count": {
+        "$id": "#/items/properties/watchers_count",
+        "type": "integer",
+        "title": "The Watchers_count Schema",
+        "default": 0,
+        "examples": [
+          13
+        ]
+      },
+      "language": {
+        "$id": "#/items/properties/language",
+        "member_region": { "type": [ "string", "null" ] },
+        "title": "The Language Schema",
+        "default": "",
+        "examples": [
+          "Python"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "has_issues": {
+        "$id": "#/items/properties/has_issues",
+        "type": "boolean",
+        "title": "The Has_issues Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "has_projects": {
+        "$id": "#/items/properties/has_projects",
+        "type": "boolean",
+        "title": "The Has_projects Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "has_downloads": {
+        "$id": "#/items/properties/has_downloads",
+        "type": "boolean",
+        "title": "The Has_downloads Schema",
+        "default": false,
+        "examples": [
+          true
+        ]
+      },
+      "has_wiki": {
+        "$id": "#/items/properties/has_wiki",
+        "type": "boolean",
+        "title": "The Has_wiki Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "has_pages": {
+        "$id": "#/items/properties/has_pages",
+        "type": "boolean",
+        "title": "The Has_pages Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "forks_count": {
+        "$id": "#/items/properties/forks_count",
+        "type": "integer",
+        "title": "The Forks_count Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "mirror_url": {
+        "$id": "#/items/properties/mirror_url",
+        "type": "null",
+        "title": "The Mirror_url Schema",
+        "default": null,
+        "examples": [
+          null
+        ]
+      },
+      "archived": {
+        "$id": "#/items/properties/archived",
+        "type": "boolean",
+        "title": "The Archived Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "disabled": {
+        "$id": "#/items/properties/disabled",
+        "type": "boolean",
+        "title": "The Disabled Schema",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "open_issues_count": {
+        "$id": "#/items/properties/open_issues_count",
+        "type": "integer",
+        "title": "The Open_issues_count Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "license": {
+        "$id": "#/items/properties/license",
+        "member_region": { "type": [ "object", "null" ] },
+        "title": "The License Schema",
+        "required": [
+          "key",
+          "name",
+          "spdx_id",
+          "url",
+          "node_id"
+        ],
+        "properties": {
+          "key": {
+            "$id": "#/items/properties/license/properties/key",
+            "type": "string",
+            "title": "The Key Schema",
+            "default": "",
+            "examples": [
+              "gpl-2.0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "name": {
+            "$id": "#/items/properties/license/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": [
+              "GNU General Public License v2.0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "spdx_id": {
+            "$id": "#/items/properties/license/properties/spdx_id",
+            "type": "string",
+            "title": "The Spdx_id Schema",
+            "default": "",
+            "examples": [
+              "GPL-2.0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "url": {
+            "$id": "#/items/properties/license/properties/url",
+            "member_region": { "type": [ "string", "null" ] },
+            "title": "The Url Schema",
+            "default": "",
+            "examples": [
+              "https://api.github.com/licenses/gpl-2.0"
+            ],
+            "pattern": "^(.*)$"
+          },
+          "node_id": {
+            "$id": "#/items/properties/license/properties/node_id",
+            "type": "string",
+            "title": "The Node_id Schema",
+            "default": "",
+            "examples": [
+              "MDc6TGljZW5zZTg="
+            ],
+            "pattern": "^(.*)$"
+          }
+        }
+      },
+      "forks": {
+        "$id": "#/items/properties/forks",
+        "type": "integer",
+        "title": "The Forks Schema",
+        "default": 0,
+        "examples": [
+          2
+        ]
+      },
+      "open_issues": {
+        "$id": "#/items/properties/open_issues",
+        "type": "integer",
+        "title": "The Open_issues Schema",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "watchers": {
+        "$id": "#/items/properties/watchers",
+        "type": "integer",
+        "title": "The Watchers Schema",
+        "default": 0,
+        "examples": [
+          13
+        ]
+      },
+      "default_branch": {
+        "$id": "#/items/properties/default_branch",
+        "type": "string",
+        "title": "The Default_branch Schema",
+        "default": "",
+        "examples": [
+          "master"
+        ],
+        "pattern": "^(.*)$"
+      },
+      "permissions": {
+        "$id": "#/items/properties/permissions",
+        "type": "object",
+        "title": "The Permissions Schema",
+        "required": [
+          "admin",
+          "push",
+          "pull"
+        ],
+        "properties": {
+          "admin": {
+            "$id": "#/items/properties/permissions/properties/admin",
+            "type": "boolean",
+            "title": "The Admin Schema",
+            "default": false,
+            "examples": [
+              false
+            ]
+          },
+          "push": {
+            "$id": "#/items/properties/permissions/properties/push",
+            "type": "boolean",
+            "title": "The Push Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          },
+          "pull": {
+            "$id": "#/items/properties/permissions/properties/pull",
+            "type": "boolean",
+            "title": "The Pull Schema",
+            "default": false,
+            "examples": [
+              true
+            ]
+          }
+        }
+      }
+    }
+  }
+}
