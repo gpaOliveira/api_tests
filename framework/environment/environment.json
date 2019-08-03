@@ -1,5 +1,8 @@
 {
   "DEBUG": "false",
+  "LOBSTER_EMAIL": "",
+  "LOBSTER_PASSWORD": "",
+  "LOBSTER_MY_LEARN": "https://my.lobsterink.com/learn",
   "GITHUB_KEY": "",
   "GITHUB_BASE": "https://api.github.com/",
   "GITLAB_KEY": "",

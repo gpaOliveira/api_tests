@@ -13,14 +13,14 @@ class TestGoogle(SeleniumTestBase):
         Then some pages are returned
         """
         self.log_step("When a search for 'testing' in google is made")
-        self.client.get('http://www.google.com')
-        search = self.client.find_element_by_name('q')
+        self.browser.browser.get('http://www.google.com')
+        search = self.browser.browser.find_element_by_name('q')
         search.send_keys("testing")
         search.send_keys(Keys.RETURN)  # hit return after you enter search text
         time.sleep(5)  # sleep for 5 seconds so you can see the results
 
         self.log_step("Then some pages are returned")
-        results_count = len(self.client.find_elements_by_css_selector(".g"))
+        results_count = len(self.browser.browser.find_elements_by_css_selector(".g"))
         self.add_output_message("Results Count: {}".format(results_count))
         if results_count <= 0:
             self.add_fail_message("No results found")

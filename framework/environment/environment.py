@@ -1,6 +1,7 @@
 import os
 from framework.log.logger import Logger
 import json
+from functools import reduce
 import pdb
 
 
@@ -33,13 +34,25 @@ class Environment:
         return self.__dict__[name]
 
     def check_variables(self):
-        if self.GITLAB_KEY is None or len(self.GITLAB_KEY) <= 0:
-            self._logger.log("No GITLAB_KEY found - export one")
-            return False
-        if self.GITHUB_KEY is None or len(self.GITHUB_KEY) <= 0:
-            self._logger.log("No GITHUB_KEY found - export one")
-            return False
-        return True
+
+        variables_to_check = [
+            'GITLAB_KEY',
+            'GITHUB_KEY',
+            'LOBSTER_EMAIL',
+            'LOBSTER_PASSWORD'
+        ]
+        status_variables = {}
+
+        for v in variables_to_check:
+            a = getattr(self, v)
+            status_variables[v] = True
+            if a is None or len(a) <= 0:
+                self._logger.log("No {} found - export one".format(v))
+                status_variables[v] = False
+
+        self._logger.log("Export variables check")
+        self._logger.log(json.dumps(status_variables, indent=4))
+        return reduce(lambda x, y: x and y, list(status_variables.values()))
 
     def load_environment_json(self):
         self._data = {}

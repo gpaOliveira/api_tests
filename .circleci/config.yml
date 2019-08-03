@@ -54,7 +54,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pytest tests/ -k test_make_sure_google_search_works
+            pytest tests/
       - run:
           name: store test results
           command: mv pytest-results* ~/repo/logs/

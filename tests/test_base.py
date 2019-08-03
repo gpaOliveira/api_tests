@@ -3,6 +3,7 @@ import os
 import json
 from typing import List
 from framework.apis.api_base import ApiBase
+from framework.pages.page_base import PageBase
 from framework.log.logger import Logger
 from framework.environment.environment import Environment
 
@@ -75,6 +76,10 @@ class ApiTestBase(unittest.TestCase):
     def flush_api_messages(self, api: ApiBase):
         self.add_fail_messages(api.error_messages)
         self.add_output_messages(api.output_messages)
+
+    def flush_page_messages(self, page: PageBase):
+        self.add_fail_messages(page.error_messages)
+        self.add_output_messages(page.output_messages)
 
     def data_test_file_path(self, filename):
         return os.path.join(

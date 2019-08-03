@@ -47,4 +47,4 @@ class Logger:
             self.log(l)
 
     def log_step(self, line):
-        self.log("="*100 + " " + line)
+        self.log("="*10 + " " + line)
