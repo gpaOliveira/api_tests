@@ -3,3 +3,4 @@
 /.pytest_cache/
 pytest-results.*
 http*.json
+*__pycache__

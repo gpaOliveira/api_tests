@@ -4,3 +4,5 @@ requests
 xmltodict
 lxml
 fastjsonschema
+selenium
+webdriver-manager
