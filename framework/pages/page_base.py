@@ -71,6 +71,7 @@ class Element:
 
     def click(self, timeout=None):
         wait_time = timeout if timeout else self.timeout
+        self.browser.set_timeout(wait_time)
         self.wait_for_visible(wait_time)
         try:
             self.logger.log("Click")
@@ -131,6 +132,9 @@ class PageBase:
         self.error_messages.append(message)
         self.output_messages.append(message)
 
+    def add_to_output(self, message):
+        self.output_messages.append("[{}] {}".format(now_to_str(), message))
+
     def open(self):
         self.browser.open(self.url)
         self.load()
@@ -147,4 +151,11 @@ class PageBase:
             except Exception as e:
                 self.logger.log("{} = NONE, {}".format(name, e))
             self.__dict__[name] = element
+        return self
 
+    def load_new_page(self, page_class):
+        new_page: PageBase = page_class(self.browser)
+        new_page.error_messages += self.error_messages
+        new_page.output_messages += self.output_messages
+        new_page.load()
+        return new_page
