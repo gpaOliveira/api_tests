@@ -3,6 +3,7 @@
   "LOBSTER_EMAIL": "",
   "LOBSTER_PASSWORD": "",
   "LOBSTER_MY_LEARN": "https://my.lobsterink.com/learn",
+  "LOBSTER_API_BASE": "https://api.lobsterink.com/api",
   "GITHUB_KEY": "",
   "GITHUB_BASE": "https://api.github.com/",
   "GITLAB_KEY": "",

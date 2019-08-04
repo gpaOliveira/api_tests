@@ -1,0 +1,250 @@
+{
+    "query": "query MarketplaceContentComponent {
+      searchMarketplaceBase(preview: {parameter_preview}, skip: {parameter_skip}, take: {parameter_take}, text: \"{parameter_text}\") {
+        productCategory {
+          id
+          name
+        }
+        featuredProduct {
+          courseProduct {
+            course {
+              duration
+              hasPracticalAssessments
+              lessons {
+                id
+              }
+              reference
+            }
+          }
+          description
+          ecommerce {
+            businessUnitAssignable
+            assignable
+            notAssignableReason
+          }
+          id
+          learningObjectives
+          learningPathProduct {
+            certificateDisabled
+            courseProducts {
+              id
+            }
+            dateClosed
+            duration
+            hasPracticalAssessments
+            lessonCount
+          }
+          name
+          partnershipOneColoredLogo
+          partnershipOneWhiteLogo
+          partnershipTwoColoredLogo
+          partnershipTwoWhiteLogo
+          price
+          productAssignment {
+            isComplimentary
+            isPaid
+            isProductAssignedToMarketplace
+            isSubscription
+          }
+          thumbnailImage
+          trailerVideoAsset {
+            assetUrlSmoothStreaming
+            language {
+              code
+              direction
+              name
+              nameInLanguage
+            }
+            languageCode
+            posterUrl
+            sourceAssetUrl
+            subtitles {
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              value
+            }
+            subtitlesUrl
+            translatedVideoAssets {
+              assetUrlSmoothStreaming
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              languageCode
+              posterUrl
+              sourceAssetUrl
+            }
+            videoAssetId
+          }
+          trailerVideoAssetNotRequired
+          type
+        }
+        filteredProducts {
+          courseProduct {
+            course {
+              duration
+              hasPracticalAssessments
+              lessons {
+                id
+              }
+              reference
+            }
+          }
+          description
+          ecommerce {
+            businessUnitAssignable
+            assignable
+            notAssignableReason
+          }
+          id
+          learningObjectives
+          learningPathProduct {
+            certificateDisabled
+            courseProducts {
+              id
+            }
+            dateClosed
+            duration
+            hasPracticalAssessments
+            lessonCount
+          }
+          name
+          partnershipOneColoredLogo
+          partnershipOneWhiteLogo
+          partnershipTwoColoredLogo
+          partnershipTwoWhiteLogo
+          price
+          productAssignment {
+            isComplimentary
+            isPaid
+            isProductAssignedToMarketplace
+            isSubscription
+          }
+          thumbnailImage
+          trailerVideoAsset {
+            assetUrlSmoothStreaming
+            language {
+              code
+              direction
+              name
+              nameInLanguage
+            }
+            languageCode
+            posterUrl
+            sourceAssetUrl
+            subtitles {
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              value
+            }
+            subtitlesUrl
+            translatedVideoAssets {
+              assetUrlSmoothStreaming
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              languageCode
+              posterUrl
+              sourceAssetUrl
+            }
+            videoAssetId
+          }
+          trailerVideoAssetNotRequired
+          type
+        }
+        potentialMatchProducts {
+          courseProduct {
+            course {
+              duration
+              hasPracticalAssessments
+              lessons {
+                id
+              }
+              reference
+            }
+          }
+          description
+          ecommerce {
+            businessUnitAssignable
+            assignable
+            notAssignableReason
+          }
+          id
+          learningObjectives
+          learningPathProduct {
+            certificateDisabled
+            courseProducts {
+              id
+            }
+            dateClosed
+            duration
+            hasPracticalAssessments
+            lessonCount
+          }
+          name
+          partnershipOneColoredLogo
+          partnershipOneWhiteLogo
+          partnershipTwoColoredLogo
+          partnershipTwoWhiteLogo
+          price
+          productAssignment {
+            isComplimentary
+            isPaid
+            isProductAssignedToMarketplace
+            isSubscription
+          }
+          thumbnailImage
+          trailerVideoAsset {
+            assetUrlSmoothStreaming
+            language {
+              code
+              direction
+              name
+              nameInLanguage
+            }
+            languageCode
+            posterUrl
+            sourceAssetUrl
+            subtitles {
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              value
+            }
+            subtitlesUrl
+            translatedVideoAssets {
+              assetUrlSmoothStreaming
+              language {
+                code
+                direction
+                name
+                nameInLanguage
+              }
+              languageCode
+              posterUrl
+              sourceAssetUrl
+            }
+            videoAssetId
+          }
+          trailerVideoAssetNotRequired
+          type
+        }
+      }
+    }"
+}

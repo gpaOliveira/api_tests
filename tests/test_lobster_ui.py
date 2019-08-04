@@ -4,7 +4,7 @@ from framework.pages.learn.signup import *
 import pdb
 
 
-class TestLobster(SeleniumTestBase):
+class TestLobsterUi(SeleniumTestBase):
 
     def test_lobster_login(self):
         """
